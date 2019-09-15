@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -xt | head | echo
+ls -xt | head 
