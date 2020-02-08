@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Superstitious Numbers
+
+x=1
+
+while [ $x -lt 21 ]
+do
+	echo $x
+
+	if [ $x -eq 3 ]
+	then
+		echo "bad luck from China"
+	elif [ $x -eq 8 ]
+	then
+		echo "bad luck from Japan"
+	elif [ $x -eq 16 ]
+	then
+		echo "bad luck from Italy"
+	fi
+	x=$((x + 1))
+done
+
