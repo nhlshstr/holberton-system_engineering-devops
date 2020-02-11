@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Kill all made easy
+
+pkill bash 
