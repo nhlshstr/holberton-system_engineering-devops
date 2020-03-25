@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Bash script to ssh into provided server using key in file path ~/.ssh/holberton
+sudo ssh -i ~/.ssh/holberton ubuntu@34.73.206.237
