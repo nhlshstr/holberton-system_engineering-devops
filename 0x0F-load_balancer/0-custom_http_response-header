@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Installs Nginx on the current server
+
+apt-get -y update
+apt-get -y install nginx
+
+ufw allow 'Nginx HTTP'
+
+chmod 777 /var/www/html/index.nginx-debian.html
+echo "Holberton School for the win!" > /var/www/html/index.nginx-debian.html
+
+sed -i "/listen 80 default_server/a rewrite ^/redirect_me https://github.com/nhlshstr permanent;" /etc/nginx/sites-available/default
+
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
+echo "error_page 404 = /404.html" >> /etc/nginx/sites-available/default
+
+sudo sed -i "/location \/ {/a add_header X-Served-By \$hostname;" /etc/nginx/sites-available/default
+
+service nginx start
