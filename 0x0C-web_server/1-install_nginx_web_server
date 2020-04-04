@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-# Installs nginx and changes curl response
-
-#!/usr/bin/env bash
 # Install nginx on your web-01 server
 apt-get -y update
 apt-get -y install nginx
