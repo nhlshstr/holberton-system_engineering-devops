@@ -1,5 +1,5 @@
 #!/bin/bash
-# configures the container to fit requirements
+# Configures the container to fit requirements
 pkill apache2
 chmod 777 /etc/nginx/nginx.conf
 chown nginx:nginx /etc/nginx/
