@@ -1,5 +1,5 @@
 #!/bin/bash
-# Configures NGINX
+# Configure NGINX
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
