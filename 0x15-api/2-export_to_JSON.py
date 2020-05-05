@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Return TODO progress """
+""" return TODO progress """
 
 import requests
 from sys import argv
