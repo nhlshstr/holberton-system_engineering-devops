@@ -24,5 +24,9 @@ if __name__ == '__main__':
                                                           len(completed_tasks),
                                                           len(tasks_json)))
 
+#    for i in range(0, len(completed_tasks)):
+#
+#    print("\t {}".format(completed_tasks[i]))
+
     for i in range(0, len(completed_tasks)):
-        print("\t {}".format(completed_tasks[i]))
+        print("\t", completed_tasks[i])
