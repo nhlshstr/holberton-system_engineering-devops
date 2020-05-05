@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """ return TODO progress """
 
+import json
 import requests
 from sys import argv
-import json
 
 if __name__ == '__main__':
     user_json = requests.get(
