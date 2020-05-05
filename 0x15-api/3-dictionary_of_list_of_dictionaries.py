@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ Return TODO progress """
 
-import requests
 import json
+import requests
 
 if __name__ == '__main__':
     users_dict = requests.get(
