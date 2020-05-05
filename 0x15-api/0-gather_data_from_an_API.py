@@ -1,21 +1,28 @@
 #!/usr/bin/python3
-"""This file uses a testing API to get data"""
+""" lReturn TODO progress """
+
 import requests
-import sys
+from sys import argv
 
+if __name__ == '__main__':
+    user_json = requests.get(
+        "https://jsonplaceholder.typicode.com/users/{}/".format(argv[1]))
 
-if __name__ == "__main__" and len(sys.argv) >= 2:
-    gid = sys.argv[1]
-    req = requests.get("http://jsonplaceholder.typicode.com/" +
-                       "users/{}/todos".format(gid))
-    data = req.json()
+    name = user_json.json().get("name")
 
-    rname = requests.get("http://jsonplaceholder.typicode.com/" +
-                         "users/{}".format(gid))
-    name = rname.json()["name"]
-    doneTasks = [task for task in data if task["completed"] is True]
-    print("Employee {} is done with ".format(name) +
-          "tasks({}/{}):".format(len(doneTasks), len(data)))
+    tasks_json = requests.get(
+        "https://jsonplaceholder.typicode.com/users/{}/todos"
+        .format(argv[1])).json()
 
-    for todo in doneTasks:
-        print("\t {}".format(todo["title"]))
+    completed_tasks = []
+
+    for i in range(0, len(tasks_json)):
+        if (tasks_json[i].get("completed")) is True:
+            completed_tasks.append(tasks_json[i].get("title"))
+
+    print("Employee {} is done with tasks({}/{}):".format(name,
+                                                          len(completed_tasks),
+                                                          len(tasks_json)))
+
+    for i in range(0, len(completed_tasks)):
+        print("\t", completed_tasks[i])
