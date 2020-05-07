@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ Recursive | Returns hot titles for subreddit"""
 import requests
 
