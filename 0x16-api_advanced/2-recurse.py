@@ -1,5 +1,5 @@
 #!/usr/bin/python
-"""Recursive | Returns hot titles for subreddit"""
+""" Recursive | Returns hot titles for subreddit"""
 import requests
 
 
