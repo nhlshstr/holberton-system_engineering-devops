@@ -14,6 +14,6 @@ def recurse(subreddit, hot_list=[], last=""):
 
     if len(hot_array) == 0:
         return hot_list
-    for i in range(0, len(hot_array)):
-        hot_list.append(hot_array[i]["data"]["title"])
+    hot_list.extend(hot_array[i]["data"]["title"]
+                    for i in range(0, len(hot_array)))
     return (recurse(subreddit, hot_list, hot_array[-1]["data"]["name"]))
