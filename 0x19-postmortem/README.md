@@ -44,7 +44,8 @@
 	jammed.
 	
 	Here is one the servers starting to catch fire:
-	![server_fire](server_fire.jpg)
+	
+![server_fire](server_fire.jpg)
 
 
 ## Resolution: 
