@@ -16,7 +16,7 @@
 server {
 	listen 80 default_server;
 	error_page 404 /404.html;
-	rewrite ^/redirect_me https://0.0.0.0:5000/airbnb-onepage/ permanent;
+	rewrite ^/redirect_me https://www.youtube.com/ permanent;
 	listen [::]:80 default_server;
 
 	# SSL configuration
@@ -42,13 +42,9 @@ server {
 
 	server_name _;
 
-	location / {
-add_header X-Served-By $hostname;
-		# First attempt to serve request as file, then
-		# as directory, then fall back to displaying a 404.
-		try_files $uri $uri/ =404;
+	location /airbnb-onepage/ {
+		proxy_pass http://0.0.0.0:5000/airbnb-onepage;
 	}
-
 	# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
 	#
 	#location ~ \.php$ {
